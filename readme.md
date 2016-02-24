@@ -3,6 +3,9 @@
 
 ## Require as dependency
 
+```bash
+    composer require alaczi/twig-country-extension
+```
 
 ## Register the extension
 
@@ -10,9 +13,9 @@
 ### PHP
 
 ```php
-$filer = new \alaczi\Twig\Extension\CountryExtension();
-$twig = new Twig_Environment($loader);
-$twig->addFilter($filter);
+    $filter = new \alaczi\Twig\Extension\CountryExtension();
+    $twig = new Twig_Environment($loader);
+    $twig->addFilter($filter);
 ```
 
 ### Symfony 2
@@ -28,11 +31,11 @@ services:
 ### Silex
 
 ```php
-$app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
-    /** @var \Twig_Environment $twig */
-    $twig->addExtension(new \alaczi\Twig\Extension\CountryExtension())
-    return $twig;
-}));
+    $app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
+        /** @var \Twig_Environment $twig */
+        $twig->addExtension(new \alaczi\Twig\Extension\CountryExtension())
+        return $twig;
+    }));
 ```
 
 ## Usage in twig
